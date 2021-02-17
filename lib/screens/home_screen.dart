@@ -22,6 +22,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
+      body: Center(child: Text('Playground'),),
     );
   }
 }

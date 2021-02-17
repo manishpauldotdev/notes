@@ -1,6 +1,9 @@
+import 'package:provider/provider.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 
 import 'package:flutter/material.dart';
+
+import '../models/dark_theme_provider.dart';
 
 class DarkModeSwitch extends StatefulWidget {
   @override
@@ -12,11 +15,12 @@ class _DarkModeSwitchState extends State<DarkModeSwitch> {
 
   @override
   Widget build(BuildContext context) {
+    final themeChange = Provider.of<DarkThemeProvider>(context);
     return FlutterSwitch(
-      value: isSwitchOn,
+      value: themeChange.darkTheme,
       activeColor: Colors.black87,
       activeSwitchBorder: Border.all(
-        color: Colors.black87,
+        color: Colors.white70,
       ),
       inactiveToggleBorder: Border.all(
         color: Colors.black87,
@@ -27,7 +31,7 @@ class _DarkModeSwitchState extends State<DarkModeSwitch> {
       ),
       onToggle: (value) {
         setState(() {
-          isSwitchOn = value;
+          themeChange.darkTheme = value;
         });
       },
     );
