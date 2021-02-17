@@ -13,6 +13,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Notes',
+      theme: ThemeData(
+        textTheme: ThemeData.light().textTheme.copyWith(
+          headline6: TextStyle(
+            color: Colors.black,
+            fontFamily: 'Manrope',
+            fontWeight: FontWeight.w800,
+            fontSize: 24,
+          ),
+        ),
+      ),
       home: HomeScreen(),
     );
   }
